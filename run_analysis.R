@@ -51,7 +51,7 @@ train_data <- bind_cols(train_s,train_x,train_y)
 
 # read the text files from the test folder
 # set header only for subject_test and Y_test tables
-# data in Inertial Signals folder is not necessarytests <- read.table("UCI HAR Dataset/test/subject_test.txt",col.names = c("subject"))
+# data in Inertial Signals folder is not necessary
 test_s <- read.table("./test/subject_test.txt",col.names = c("subject"))
 test_x <- read.table("./test/X_test.txt")
 test_y <- read.table("./test/Y_test.txt",col.names = c("y"))
@@ -63,17 +63,17 @@ colnames(test_x) <- features
 test_data <- bind_cols(test_s,test_x,test_y) 
 
 # merge the test and train datasets
-# bind_rows() from dplyr removes the 84 duplicated colums
+# bind_rows() from dplyr removes the 84 duplicated columns
 # dim(merged_data)
 # [1] 10299   479
 full_set <- bind_rows(train_data,test_data) 
 
-# read text file with the activity lables and assign column names
+# read text file with the activity labels and assign column names
 activity_labels <- fread("./activity_labels.txt") 
 colnames(activity_labels) <- c("y","activityLabel")
 
 # distribute activity lables across all rows using "y" as key and merging the two tables
-# select subject & activity columns, together with all features the contain mean() or std()
+# select subject & activity columns, together with all features that contain mean() or std()
 # dim(merged_data)
 # [1] 10299    68
 merged_data <-  full_set  %>% merge(activity_labels,by.x="y",by.y="y") %>%
