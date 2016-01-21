@@ -1,4 +1,9 @@
 #Codebook
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache=TRUE)
+```
+
 ```{r ktable,echo=F, message=FALSE, warning=FALSE}
 
 library(knitr)
