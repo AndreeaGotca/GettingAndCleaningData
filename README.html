@@ -63,44 +63,34 @@ img {
 
 <div id="getting-and-cleaning-data-course-project" class="section level1">
 <h1>Getting and Cleaning Data Course Project</h1>
-<p>Author: <a href="https://github.com/AndreeaGotca/GettingAndCleaningData">Andreea Gotca</a></p>
+<p>Author: <a href="https://github.com/AndreeaGotca">Andreea Gotca</a></p>
 <div id="overview" class="section level2">
 <h2>Overview</h2>
 <p>The purpose of this project is to demonstrate your ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis. You will be graded by your peers on a series of yes/no questions related to the project. You will be required to submit: 1) a tidy data set as described below, 2) a link to a Github repository with your script for performing the analysis, and 3) a code book that describes the variables, the data, and any transformations or work that you performed to clean up the data called CodeBook.md. You should also include a README.md in the repo with your scripts. This repo explains how all of the scripts work and how they are connected.</p>
-<p><a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip">Here</a> are the data for the project:</p>
+<p><a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip">Here</a> are the data for the project.</p>
 <p>You should create one R script called run_analysis.R that does the following.</p>
 </div>
 <div id="objectives" class="section level2">
 <h2>Objectives</h2>
-<ul>
-<li>Merges the training and the test sets to create one data set.</li>
-<li>Extracts only the measurements on the mean and standard deviation for each measurement.</li>
-<li>Uses descriptive activity names to name the activities in the data set</li>
-<li>Appropriately labels the data set with descriptive variable names.</li>
-<li>From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.</li>
-</ul>
+<ol style="list-style-type: decimal">
+<li>Merges the <strong>training</strong> and <strong>test</strong> sets to create one data set.</li>
+<li>Reads <code>features.txt</code> and uses only the measurements on the <strong>mean</strong> and <strong>standard deviation</strong> for each measurement.</li>
+<li>Reads <code>activity_labels.txt</code> and applies human readable activity names to name the activities in the data set.</li>
+<li>Labels the data set with descriptive name</li>
+<li>Merges the features with activity labels and subject IDs.</li>
+<li>The average of each measurement for each activity and each subject is summarized to a second data set. The result is saved as <code>tidydata.txt</code>.</li>
+</ol>
 </div>
 <div id="my-analysis" class="section level2">
 <h2>My analysis</h2>
-<p>I have submitted one script file names <em>run_analysis.R</em> , which will produce the requested output. The script was written on Windows 64x, with R version 3.2.2. Open the script and run it into R.</p>
-<p><code>run_analysis.R</code></p>
-<ol style="list-style-type: decimal">
-<li>installs and requires needed libraries</li>
-<li>saves your working directory path in as a string</li>
-<li>downloads, unzips the folder and sets it as your working directory</li>
-<li>reads the train and test files from the train and test folders</li>
-<li>data in Inertial Signals folder is not necessary</li>
-<li>defines and assigns descriptive names for the features</li>
-<li>merges the test and train datasets and removes the duplicated columns</li>
-<li>reads text file with the activity labels and assign column names</li>
-<li>selects only features that contain mean() or std()</li>
-<li>calculates the average for mean() and std() features, for each activity and each subject</li>
-<li>writes the output in text file</li>
-</ol>
+<p>I have submitted one script file named <em>run_analysis.R</em> , which will produce the requested output. The script was written on Windows 64x, with R version 3.2.2. Open the script and run it into R.</p>
 </div>
 <div id="output" class="section level2">
 <h2>Output</h2>
-<p>Tidy dataset file <em>tidydata.txt</em></p>
+<p>Tidy dataset file <em>tidydata.txt</em> is a 180x68 data frame saved as a text file.</p>
+<p>The first column contains activity names.</p>
+<p>The second column contains subject IDs.</p>
+<p>The averages for each of the 66 attributes are in columns 3-68.</p>
 </markdown>
 </p>
 </div>
