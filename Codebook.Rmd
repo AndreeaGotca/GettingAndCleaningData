@@ -1,4 +1,9 @@
 #Codebook
+```{r ktable,echo=F, message=FALSE, warning=FALSE}
+
+library(knitr)
+
+```
 
 Author: [Andreea Gotca][3]
 ```{r,echo=F}
@@ -30,9 +35,9 @@ Full Description at the site where the data was obtained [here][2]
 5. activity_labels.txt - Links the class labels with their activity name.
 
 ##Variable Descriptions
-```{r ktable,echo=F, message=FALSE, warning=FALSE}
-library(knitr)
-kable(read.csv("D:/Rfiles/variable_desc.csv"))
+```{r,results='asis',echo=F, message=FALSE, warning=FALSE}
+
+knitr::kable(read.csv("D:/Rfiles/variable_desc.csv"))
 
 ```
 
